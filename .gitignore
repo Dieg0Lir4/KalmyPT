@@ -1,0 +1,4 @@
+venvKalmy/
+__pycache__/
+*.pyc
+.env
