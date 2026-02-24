@@ -53,6 +53,7 @@ La documentación automática estará disponible en:
 ---
 
 ## Cómo correr los tests
+Con el venv activado y en la carpeta KalmyPT pon lo siguiente:
 
 ```bash
 pytest tests/ -v
