@@ -63,6 +63,21 @@ Los tests usan una base de datos separada `test.db` que se crea y se elimina aut
 
 ---
 
+## Correr con Docker
+
+**Requisitos:** tener Docker Desktop instalado.
+```bash
+git clone <url-de-tu-repo>
+cd KalmyPT
+docker compose up
+```
+
+La API estará disponible en `http://127.0.0.1:8000/docs`
+
+Para detenerlo: `CTRL+C`
+
+---
+
 ## Endpoints
 
 | Método | Ruta | Descripción | Status Code |
