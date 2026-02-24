@@ -78,6 +78,16 @@ Para detenerlo: `CTRL+C`
 
 ---
 
+## Cómo probar los endpoints
+
+### Opción 1 - Swagger UI (recomendado)
+Con la API corriendo entra a `http://127.0.0.1:8000/docs`. Desde ahí puedes hacer requests directamente en el navegador sin necesidad de Postman.
+
+### Opción 2 - Postman
+Pueden usar Postman para hacer peticiones a los endpoints. Asegurate de tener la url y método correcto.
+
+---
+
 ## Endpoints
 
 | Método | Ruta | Descripción | Status Code |
@@ -136,10 +146,10 @@ Respuesta:
 
 ### Stack
 
-- **FastAPI** → Lo que pidieron para esta prueba técnica, pero esta bien porque bien con documentación automática via OpenAPI/Swagger y tiene integración con Pydantic para validaciones.
-- **SQLAlchemy** → ORM (Object Relational Mapper) que permite trabajar con la base de datos en Python sin escribir SQL. Si se cambia de SQLite a PostgreSQL, el código no cambia.
-- **Pydantic** → Validación automática de datos de entrada y salida. Si un campo tiene el tipo incorrecto, rechaza el request automáticamente con un 422. Ahora tener que escribir a mano las validaciones.
-- **SQLite** → Base de datos de archivo, ideal para desarrollo local sin necesidad de configurar un servidor. Para producción en AWS solo se cambia la variable `DATABASE_URL` en el `.env`.
+- **FastAPI** → Lo que pidieron para esta prueba técnica. Funciona bien con documentación automática via OpenAPI/Swagger y tiene integración con Pydantic para validaciones.
+- **SQLAlchemy** → ORM (Object Relational Mapper) que permite trabajar con la base de datos en Python sin escribir SQL.
+- **Pydantic** → Validación automática de datos de entrada y salida. Si un campo tiene el tipo incorrecto, rechaza el request automáticamente con un 422. Sin Pydantic habría que escribir las validaciones a mano.
+- **SQLite** → Base de datos de archivo. Por si a futuro se quiere usar AWS u otro servicio solo se cambia la variable `DATABASE_URL` en el `.env`.
 - **pytest + httpx** → Testing de endpoints sin necesidad de levantar un servidor real.
 
 ### Patrón de arquitectura
