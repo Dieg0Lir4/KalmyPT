@@ -48,7 +48,7 @@ def test_get_item(client: TestClient):
 def test_get_item_not_found(client: TestClient):
     # verifica que devuelve 404 si el item no existe
     response = client.get("/items/999")
-    assert response.status_code == 999
+    assert response.status_code == 404
 
 def test_update_item(client: TestClient):
     # crea un item y lo actualiza
