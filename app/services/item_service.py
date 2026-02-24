@@ -26,9 +26,13 @@ class ItemService:
         return self.repository.create(item)
     
     def update(self, item_id: int, item: ItemUpdate):
-        self.repository.get_by_id(item_id)
+        db_item = self.repository.get_by_id(item_id)
+        if not db_item:
+            raise HTTPException(status_code=404, detail="Item not found")
         return self.repository.update(item_id, item)
     
     def delete(self, item_id: int):
-        self.repository.get_by_id(item_id)
+        db_item = self.repository.get_by_id(item_id)
+        if not db_item:
+            raise HTTPException(status_code=404, detail="Item not found")
         self.repository.delete(item_id)

@@ -24,6 +24,8 @@ class ItemRepository:
 
     def update(self, item_id: int, item: ItemUpdate):
         db_item = self.get_by_id(item_id)
+        if not db_item:
+            return None
         for key, value in item.model_dump().items():
             setattr(db_item, key, value)
         self.db.commit()
@@ -32,5 +34,7 @@ class ItemRepository:
 
     def delete(self, item_id: int):
         db_item = self.get_by_id(item_id)
+        if not db_item:
+            return None
         self.db.delete(db_item)
         self.db.commit()

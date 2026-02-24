@@ -9,7 +9,7 @@ router = APIRouter(prefix="/items", tags=["items"])
 @router.get("/", response_model=ItemPaginated)
 def get_items(
     page: int = Query(1, ge=1),
-    size: int = Query(10, ge=1),
+    size: int = Query(10, ge=1, le=100),
     db: Session = Depends(get_db)
 ):
     service = ItemService(db)
