@@ -181,26 +181,32 @@ Si el proyecto crece este patrón permite escalarlo y manterlo más facil.
 ## Estructura del proyecto
 
 ```
-app/
-├── main.py
-├── core/
-│   ├── config.py
-│   └── database.py
-├── models/
-│   └── item.py
-├── schemas/
-│   └── item.py
-├── repositories/
-│   └── item_repository.py
-├── services/
-│   └── item_service.py
-└── api/
-    └── items.py
-tests/
-├── conftest.py
-└── test_items.py
-.env
-.gitignore
-requirements.txt
-README.md
+KalmyPT/
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── app/
+│   ├── main.py
+│   ├── core/
+│   │   ├── config.py
+│   │   └── database.py
+│   ├── models/
+│   │   └── item.py
+│   ├── schemas/
+│   │   └── item.py
+│   ├── repositories/
+│   │   └── item_repository.py
+│   ├── services/
+│   │   └── item_service.py
+│   └── api/
+│       └── items.py
+├── tests/
+│   ├── conftest.py
+│   └── test_items.py
+├── Dockerfile
+├── docker-compose.yml
+├── .env
+├── .gitignore
+├── requirements.txt
+└── README.md
 ```
