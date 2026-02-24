@@ -5,7 +5,7 @@ from app.core.database import engine, Base
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
-    title="Items API",
+    title="Items API para Kalmy",
     description="API para gestionar items",
     version="1.0.0"
 )
