@@ -149,7 +149,7 @@ Respuesta:
 - **FastAPI** → Lo que pidieron para esta prueba técnica. Funciona bien con documentación automática via OpenAPI/Swagger y tiene integración con Pydantic para validaciones.
 - **SQLAlchemy** → ORM (Object Relational Mapper) que permite trabajar con la base de datos en Python sin escribir SQL.
 - **Pydantic** → Validación automática de datos de entrada y salida. Si un campo tiene el tipo incorrecto, rechaza el request automáticamente con un 422. Sin Pydantic habría que escribir las validaciones a mano.
-- **SQLite** → Base de datos de archivo. Por si a futuro se quiere usar AWS u otro servicio solo se cambia la variable `DATABASE_URL` en el `.env`.
+- **SQLite** → Base de datos de archivo. Por si a futuro se quiere usar AWS u otro servicio solo se cambia la variable `DATABASE_URL` en el `.env`. También se considero usar una base de datos relacional para mantener la integridad de los datos, ya que en la prueba explica que los items deben de tener esos campos.
 - **pytest + httpx** → Testing de endpoints sin necesidad de levantar un servidor real.
 
 ### Patrón de arquitectura
